@@ -149,8 +149,8 @@ python scripts/check_data_layout.py --data-dir <原工作区>/data/raw --deep --
 
 | 检查 | 结果 |
 |---|---|
-| 仓库文件数 | 62 |
-| 仓库总体积 | 4.38 MB |
+| 仓库文件数（git ls-files） | 60 |
+| 仓库总体积 | 4.3 MB（未压缩工作区 4.38 MB） |
 | 最大单文件 | 3.0 MB（合成日表示例 CSV） |
 | 是否包含 RESSET 原始 CSV/ZIP | **否** |
 | 是否包含论文/图书 PDF | **否** |
@@ -160,6 +160,8 @@ python scripts/check_data_layout.py --data-dir <原工作区>/data/raw --deep --
 | `.gitignore` 是否排除 `data/raw` | 是（保留 `.gitkeep` 与 `README.md`） |
 | `.gitignore` 是否误排除 `data/sample` | 否（显式放行 `data/sample/**`） |
 | 缓存/临时文件 | `__pycache__` 已删除且被忽略 |
+| 首次提交 | `399d79f`（main 分支，root commit） |
+| 全新克隆冒烟测试 | 克隆到临时目录后：25 项测试 OK、数据检查 FAIL=0、Sample Mode 跑通 |
 
 ### 需要作者最终确认的第三方内容
 
