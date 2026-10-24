@@ -1,0 +1,11 @@
+# Size and Value in China — 复现环境
+# 本次验证使用的版本写在注释里（Python 3.10.2）
+pandas>=2.0          # 验证版本 3.0.1
+numpy>=1.24          # 验证版本 2.3.5
+statsmodels>=0.14    # 验证版本 0.15.0（时间序列 OLS / 截面回归 / HAC）
+scipy>=1.10          # 验证版本 1.18.1（statsmodels 依赖 + 贝叶斯数值积分）
+matplotlib>=3.7      # 验证版本 3.11.2（C 线图表）
+
+# 可选：PyMuPDF，仅 00_paper_targets.ipynb 中"显示原论文页"的辅助函数需要，
+# 该函数默认被注释掉，且需要你自行准备论文 PDF。
+# PyMuPDF>=1.23
