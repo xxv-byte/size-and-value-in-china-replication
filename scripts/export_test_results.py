@@ -64,11 +64,13 @@ class Recorder(unittest.TextTestResult):
 
 
 def git_code_version():
+    """记录被测源码的 commit；证据文件自身的改动不算脏（否则每次都必然是 dirty）。"""
     try:
         sha = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=REPO, capture_output=True,
                              text=True, check=True).stdout.strip()
-        dirty = bool(subprocess.run(['git', 'status', '--porcelain'], cwd=REPO,
-                                    capture_output=True, text=True).stdout.strip())
+        dirty = bool(subprocess.run(
+            ['git', 'status', '--porcelain', '--', '.', ':(exclude)docs/testing'],
+            cwd=REPO, capture_output=True, text=True).stdout.strip())
         return sha + (' (dirty working tree)' if dirty else '')
     except Exception:                                  # noqa: BLE001
         return 'unavailable (not a git checkout)'
