@@ -10,12 +10,13 @@
 
 ## 当前阶段
 
-- 阶段：**M1 过程基线**（分支 `m1-process-baseline`）
-- 目标：把"里程碑四件套 + 接续状态 + 证据双份"制度化，不改任何实证代码
-- 阻塞：无
-- 下一入口：见 `docs/requirements/M1-plan.md`；若要做实证推进，新开 `m2-*` 分支
+- 阶段：**M2 CI 启用**（分支 `m2-ci-activation`）
+- 目标：让 `sample-mode.yml` 首次真实运行并稳定为绿，再把 **Require status checks** 加进 `main-protection`；不改任何实证代码
+- 阻塞：无（仅受 github.com:443 间歇不可达影响推送；`gh api` 通道正常）
+- 下一入口：`docs/requirements/M2-plan.md`
 
 ## 快照
 
+- 2026-10-26 · `main` · `403f7ca` · **M1 已合并并打标签**：PR #1 squash 合并（8 文件 / +599−0 / 未改 Notebook），标签 `m1`→`bd4ce42`→`403f7ca`；`main-protection` 生效（必须 PR + 禁强推 + 禁删除 + 0 审批，bypass 为空）；`sample-mode.yml` 尚未触发过；本地已同步到 `403f7ca`（68 文件）。
 - 2026-10-26 · `main` · `6ae7b23` · 仓库已发布为 public（`xxv-byte/size-and-value-in-china-replication`），31 个 Notebook / 60 文件；25 项测试通过、样例端到端通过、真实数据只读检查 FAIL=0；真实数据完整重跑未执行。
-- 2026-10-26 · `m1-process-baseline` · 本文档所在分支 · 新增 `AGENTS.md` / `.agent` / `docs/requirements/M1-plan.md` / `docs/development/M1-contracts.md` / `docs/testing/M1-results.json` / `M1-validation.md` / `.github/workflows/sample-mode.yml` / `scripts/export_test_results.py`；未改动任何 Notebook 与实证逻辑。
+- 2026-10-26 · `m1-process-baseline` · `1202ca4` · 新增 `AGENTS.md` / `.agent` / `docs/requirements/M1-plan.md` / `docs/development/M1-contracts.md` / `docs/testing/M1-results.json` / `M1-validation.md` / `.github/workflows/sample-mode.yml` / `scripts/export_test_results.py`；未改动任何 Notebook 与实证逻辑。

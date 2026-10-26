@@ -1,0 +1,224 @@
+{
+  "milestone": "M2",
+  "label": "CI sample mode (ubuntu-latest, Python 3.11)",
+  "source": "GitHub Actions artifact \"ci-results\"（由 scripts/export_test_results.py 在 CI 内生成）",
+  "ci": {
+    "workflow": "sample-mode",
+    "job": "verify",
+    "runId": 40313718145,
+    "runUrl": "https://github.com/xxv-byte/size-and-value-in-china-replication/actions/runs/40313718145",
+    "event": "pull_request",
+    "headSha": "b79f242f6f84d9a743ec971abaa8c7a36d2d1674",
+    "mergeRefSha": "8d87c70fd55ea0f4a4e1221e4c6ee66149279968",
+    "conclusion": "success",
+    "note": "pull_request 事件默认检出 refs/pull/2/merge（本次 8d87c70），因此 CI 内的 codeVersion 指向该测试合并提交，而不是分支 head。"
+  },
+  "capturedAt": "2026-10-26T11:15:59.381481+00:00",
+  "command": "python -m unittest discover -s tests",
+  "buildResult": "SUCCESS",
+  "exitCode": 0,
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "pythonVersion": "3.11.17",
+  "packages": {
+    "pandas": "3.1.0",
+    "numpy": "2.4.6",
+    "statsmodels": "0.15.0",
+    "scipy": "1.17.1"
+  },
+  "codeVersion": "8d87c70fd55ea0f4a4e1221e4c6ee66149279968",
+  "log": "(console output of python -m unittest discover -s tests; 完整日志见 CI artifact 或本地终端)",
+  "totals": {
+    "tests": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 1.364
+  },
+  "suites": [
+    {
+      "module": "test_core_logic",
+      "suite": "CleaningTests",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "test_cleaning_drops_duplicates_and_missing",
+          "status": "passed",
+          "seconds": 0.0454
+        },
+        {
+          "name": "test_normalize_stock_code",
+          "status": "passed",
+          "seconds": 0.0013
+        },
+        {
+          "name": "test_universe_drops_st_and_thin_trading",
+          "status": "passed",
+          "seconds": 0.0026
+        }
+      ]
+    },
+    {
+      "module": "test_core_logic",
+      "suite": "FeatureTests",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "test_asset_growth_uses_adjacent_annual_reports",
+          "status": "passed",
+          "seconds": 0.0047
+        },
+        {
+          "name": "test_market_value_bm_ep",
+          "status": "passed",
+          "seconds": 0.0011
+        },
+        {
+          "name": "test_momentum_skips_most_recent_month",
+          "status": "passed",
+          "seconds": 0.0045
+        },
+        {
+          "name": "test_point_in_time_alignment",
+          "status": "passed",
+          "seconds": 0.0038
+        }
+      ]
+    },
+    {
+      "module": "test_core_logic",
+      "suite": "MonthlyTests",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "test_form_signal_uses_last_trading_day_and_next_month",
+          "status": "passed",
+          "seconds": 0.0047
+        },
+        {
+          "name": "test_monthly_panel_is_left_join_on_returns",
+          "status": "passed",
+          "seconds": 0.0014
+        },
+        {
+          "name": "test_monthly_return_compounds_daily",
+          "status": "passed",
+          "seconds": 0.0032
+        }
+      ]
+    },
+    {
+      "module": "test_core_logic",
+      "suite": "PortfolioTests",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "test_ch3_market_factor_uses_top_seventy_percent",
+          "status": "passed",
+          "seconds": 0.0103
+        },
+        {
+          "name": "test_ch3_smb_equals_small_minus_big",
+          "status": "passed",
+          "seconds": 0.0093
+        },
+        {
+          "name": "test_ch3_vmg_equals_value_minus_growth",
+          "status": "passed",
+          "seconds": 0.0089
+        },
+        {
+          "name": "test_unconditional_sort_produces_ten_groups",
+          "status": "passed",
+          "seconds": 0.0335
+        }
+      ]
+    },
+    {
+      "module": "test_core_logic",
+      "suite": "RegressionTests",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "test_cross_section_regression_recovers_premium",
+          "status": "passed",
+          "seconds": 0.0024
+        },
+        {
+          "name": "test_fama_macbeth_recovers_average_premium",
+          "status": "passed",
+          "seconds": 0.0871
+        },
+        {
+          "name": "test_time_series_regression_recovers_betas",
+          "status": "passed",
+          "seconds": 0.0068
+        }
+      ]
+    },
+    {
+      "module": "test_notebook_integrity",
+      "suite": "NotebookIntegrityTests",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "name": "test_config_has_no_hardcoded_root",
+          "status": "passed",
+          "seconds": 0.0002
+        },
+        {
+          "name": "test_config_patterns_match_documentation",
+          "status": "passed",
+          "seconds": 0.0001
+        },
+        {
+          "name": "test_every_notebook_is_valid_json_without_outputs",
+          "status": "passed",
+          "seconds": 0.007
+        },
+        {
+          "name": "test_expected_functions_are_defined",
+          "status": "passed",
+          "seconds": 0.0096
+        },
+        {
+          "name": "test_momentum_call_present_in_downstream_pipelines",
+          "status": "passed",
+          "seconds": 0.0002
+        },
+        {
+          "name": "test_no_personal_absolute_paths",
+          "status": "passed",
+          "seconds": 0.037
+        },
+        {
+          "name": "test_notebook_count",
+          "status": "passed",
+          "seconds": 0.0
+        },
+        {
+          "name": "test_run_targets_exist",
+          "status": "passed",
+          "seconds": 0.0085
+        }
+      ]
+    }
+  ]
+}
