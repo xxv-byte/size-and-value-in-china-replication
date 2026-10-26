@@ -1,0 +1,21 @@
+# 项目接续状态（.agent）
+
+最后更新：2026-10-26（Asia/Shanghai）。根目录 [AGENTS.md](AGENTS.md) 引用本文件。
+
+## 用法
+
+- 只保留**最近 5 条**快照，每条不超过 8 行；更早的移入 `docs/archive/AGENT-HISTORY-YYYY-MM.md`。
+- 每条必须绑定：日期 + 分支 + commit（可省略短 SHA 前的 0）+ 实际验证结果。
+- "未完成 / 未执行 / 只跑了一部分"必须原样保留，不得改写成"通过"。
+
+## 当前阶段
+
+- 阶段：**M1 过程基线**（分支 `m1-process-baseline`）
+- 目标：把"里程碑四件套 + 接续状态 + 证据双份"制度化，不改任何实证代码
+- 阻塞：无
+- 下一入口：见 `docs/requirements/M1-plan.md`；若要做实证推进，新开 `m2-*` 分支
+
+## 快照
+
+- 2026-10-26 · `main` · `6ae7b23` · 仓库已发布为 public（`xxv-byte/size-and-value-in-china-replication`），31 个 Notebook / 60 文件；25 项测试通过、样例端到端通过、真实数据只读检查 FAIL=0；真实数据完整重跑未执行。
+- 2026-10-26 · `m1-process-baseline` · 本文档所在分支 · 新增 `AGENTS.md` / `.agent` / `docs/requirements/M1-plan.md` / `docs/development/M1-contracts.md` / `docs/testing/M1-results.json` / `M1-validation.md` / `.github/workflows/sample-mode.yml` / `scripts/export_test_results.py`；未改动任何 Notebook 与实证逻辑。
